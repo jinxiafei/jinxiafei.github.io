@@ -62,6 +62,59 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-JSP页面与数据库交互中文乱码问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/JSP页面与数据库交互中文乱码问题/" class="article-date">
+  <time datetime="2018-04-24T12:56:25.000Z" itemprop="datePublished">2018-04-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Diary/">Diary</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/JSP页面与数据库交互中文乱码问题/">中文乱码问题</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#JSP页面与数据库交互中文乱码问题</p>
+<p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：</p>
+<blockquote>
+<p>?useUnicode=true&amp;characterEncoding=UTF-8</p>
+</blockquote>
+<p>完整如下：</p>
+<blockquote>
+<p>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;</p>
+</blockquote>
+<p>2.在JSP页面添加以下语句：</p>
+<p><pre><code><br> &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/JSP页面与数据库交互中文乱码问题/" data-id="cjgdq74ba00000wvfpe5fmnl4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo-test" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/hexo-test/" class="article-date">
@@ -93,7 +146,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/hexo-test/" data-id="cjgdmvhyx000184vfi07y4avi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/hexo-test/" data-id="cjgdq74ba00010wvfzlpp0t5m" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Games/">Games</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PS3/">PS3</a></li></ul>
@@ -140,7 +193,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/hello-world/" data-id="cjgdmvhyx000084vft9cw4sen" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/hello-world/" data-id="cjgdq74bp00040wvfk5785p8k" class="article-share-link">Share</a>
       
       
     </footer>
@@ -170,7 +223,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Games/">Games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS3/">PS3</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Games/">Games</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PS3/">PS3</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/java/">java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/web/">web</a></li></ul>
     </div>
   </div>
 
@@ -180,7 +233,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Games/" style="font-size: 10px;">Games</a> <a href="/tags/PS3/" style="font-size: 10px;">PS3</a>
+      <a href="/tags/Games/" style="font-size: 10px;">Games</a> <a href="/tags/PS3/" style="font-size: 10px;">PS3</a> <a href="/tags/java/" style="font-size: 10px;">java</a> <a href="/tags/web/" style="font-size: 10px;">web</a>
     </div>
   </div>
 
@@ -200,6 +253,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/JSP页面与数据库交互中文乱码问题/">中文乱码问题</a>
+          </li>
         
           <li>
             <a href="/hexo-test/">Test for Hexo</a>
