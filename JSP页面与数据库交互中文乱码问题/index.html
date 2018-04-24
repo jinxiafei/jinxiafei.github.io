@@ -7,18 +7,18 @@
   
   <title>中文乱码问题 | MyBlog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：  ?useUnicode=true&amp;amp;characterEncoding=UTF-8  完整如下：  String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;  2.在">
+  <meta name="description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：?useUnicode=true&amp;amp;characterEncoding=UTF-8完整如下： String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;2.在JSP页面添加">
 <meta name="keywords" content="java,web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="中文乱码问题">
 <meta property="og:url" content="http://yoursite.com/JSP页面与数据库交互中文乱码问题/index.html">
 <meta property="og:site_name" content="MyBlog">
-<meta property="og:description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：  ?useUnicode=true&amp;amp;characterEncoding=UTF-8  完整如下：  String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;  2.在">
+<meta property="og:description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：?useUnicode=true&amp;amp;characterEncoding=UTF-8完整如下： String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;2.在JSP页面添加">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-04-24T13:43:33.825Z">
+<meta property="og:updated_time" content="2018-04-24T13:58:55.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="中文乱码问题">
-<meta name="twitter:description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：  ?useUnicode=true&amp;amp;characterEncoding=UTF-8  完整如下：  String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;  2.在">
+<meta name="twitter:description" content="#JSP页面与数据库交互中文乱码问题 ##解决方法1.在本地数据库地址和名称后面加入编码字符集：?useUnicode=true&amp;amp;characterEncoding=UTF-8完整如下： String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;2.在JSP页面添加">
   
     <link rel="alternate" href="/atom.xml" title="MyBlog" type="application/atom+xml">
   
@@ -92,21 +92,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#JSP页面与数据库交互中文乱码问题</p>
-<p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：</p>
-<blockquote>
-<p>?useUnicode=true&amp;characterEncoding=UTF-8</p>
-</blockquote>
-<p>完整如下：</p>
-<blockquote>
-<p>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;</p>
-</blockquote>
-<p>2.在JSP页面添加以下语句：</p>
-<p><pre><code><br> &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
+<p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：<br><pre>?useUnicode=true&amp;characterEncoding=UTF-8<br></pre><br>完整如下：</p>
+<p><pre><code><br>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;<br></code></pre><br>2.在JSP页面添加以下语句：</p>
+<p><pre><code><br>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/JSP页面与数据库交互中文乱码问题/" data-id="cjgdqd683000108vfvr6e2yos" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/JSP页面与数据库交互中文乱码问题/" data-id="cjgdqlfz500005ovfrh2cznzw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>

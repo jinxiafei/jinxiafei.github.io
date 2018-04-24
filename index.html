@@ -89,21 +89,14 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#JSP页面与数据库交互中文乱码问题</p>
-<p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：</p>
-<blockquote>
-<p>?useUnicode=true&amp;characterEncoding=UTF-8</p>
-</blockquote>
-<p>完整如下：</p>
-<blockquote>
-<p>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;</p>
-</blockquote>
-<p>2.在JSP页面添加以下语句：</p>
-<p><pre><code><br> &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
+<p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：<br><pre>?useUnicode=true&amp;characterEncoding=UTF-8<br></pre><br>完整如下：</p>
+<p><pre><code><br>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;<br></code></pre><br>2.在JSP页面添加以下语句：</p>
+<p><pre><code><br>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/JSP页面与数据库交互中文乱码问题/" data-id="cjgdqd683000108vfvr6e2yos" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/JSP页面与数据库交互中文乱码问题/" data-id="cjgdqlfz500005ovfrh2cznzw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/web/">web</a></li></ul>
@@ -146,7 +139,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/hexo-test/" data-id="cjgdqd683000208vflhylxguj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/hexo-test/" data-id="cjgdqlfzl00045ovfevuo63w2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Games/">Games</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PS3/">PS3</a></li></ul>
@@ -193,7 +186,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/hello-world/" data-id="cjgdqd683000008vfbn9sfkk6" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/hello-world/" data-id="cjgdqlfzl00015ovfbnq2b7od" class="article-share-link">Share</a>
       
       
     </footer>

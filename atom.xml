@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-24T13:43:33.825Z</updated>
+  <updated>2018-04-24T13:58:55.210Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,19 +21,17 @@
     <link href="http://yoursite.com/JSP%E9%A1%B5%E9%9D%A2%E4%B8%8E%E6%95%B0%E6%8D%AE%E5%BA%93%E4%BA%A4%E4%BA%92%E4%B8%AD%E6%96%87%E4%B9%B1%E7%A0%81%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/JSP页面与数据库交互中文乱码问题/</id>
     <published>2018-04-24T12:56:25.000Z</published>
-    <updated>2018-04-24T13:43:33.825Z</updated>
+    <updated>2018-04-24T13:58:55.210Z</updated>
     
-    <content type="html"><![CDATA[<p>#JSP页面与数据库交互中文乱码问题</p><p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：</p><blockquote><p>?useUnicode=true&amp;characterEncoding=UTF-8</p></blockquote><p>完整如下：</p><blockquote><p>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;</p></blockquote><p>2.在JSP页面添加以下语句：</p><p><pre><code><br> &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>]]></content>
+    <content type="html"><![CDATA[<p>#JSP页面与数据库交互中文乱码问题</p><p>##解决方法<br>1.在本地数据库地址和名称后面加入编码字符集：<br><pre>?useUnicode=true&amp;characterEncoding=UTF-8<br></pre><br>完整如下：</p><p><pre><code><br>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;<br></code></pre><br>2.在JSP页面添加以下语句：</p><p><pre><code><br>&lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;#JSP页面与数据库交互中文乱码问题&lt;/p&gt;
-&lt;p&gt;##解决方法&lt;br&gt;1.在本地数据库地址和名称后面加入编码字符集：&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;?useUnicode=true&amp;amp;characterEncoding=UTF-8&lt;/p&gt;
-&lt;/blockq
+&lt;p&gt;##解决方法&lt;br&gt;1.在本地数据库地址和名称后面加入编码字符集：&lt;br&gt;&lt;pre&gt;?useUnicode=true&amp;amp;characterEncoding=UTF-8&lt;br&gt;&lt;/pre&gt;&lt;br&gt;完整如下：&lt;/p&gt;
+&lt;
       
     
     </summary>
