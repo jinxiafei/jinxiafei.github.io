@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:description" content="JSP页面与数据库交互中文乱码问题解决方法1.在本地数据库地址和名称后面加入编码字符集?useUnicode=true&amp;amp;characterEncoding=UTF-8完整如下： String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;2.在JSP页面添加以下语句：">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T13:21:50.456Z">
+<meta property="og:updated_time" content="2018-04-26T15:06:55.334Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JSP页面与数据库交互中文乱码问题">
 <meta name="twitter:description" content="JSP页面与数据库交互中文乱码问题解决方法1.在本地数据库地址和名称后面加入编码字符集?useUnicode=true&amp;amp;characterEncoding=UTF-8完整如下： String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;amp;characterEncoding=UTF-8”;2.在JSP页面添加以下语句：">
@@ -343,7 +343,7 @@
 
       
         <h2 id="JSP页面与数据库交互中文乱码问题"><a href="#JSP页面与数据库交互中文乱码问题" class="headerlink" title="JSP页面与数据库交互中文乱码问题"></a>JSP页面与数据库交互中文乱码问题</h2><h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><p>1.在本地数据库地址和名称后面加入编码字符集<br><pre>?useUnicode=true&amp;characterEncoding=UTF-8<br></pre><br>完整如下：</p>
-<p><pre><code><br>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;<br></code></pre><br>2.在JSP页面添加以下语句：</p>
+<p><pre><code><br>String url = “jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&amp;characterEncoding=UTF-8”;<br></code></pre><br>2.在JSP页面添加以下语句：<br><a id="more"></a> </p>
 <p><pre><code><br> &lt;%@ page language=”java” contentType=”text/html; charset=UTF-8”pageEncoding=”UTF-8”%&gt;<br> &lt;%request.setCharacterEncoding(“UTF-8”);%&gt;<br> &lt;%response.setContentType(“text/html;charset=utf-8”);%&gt;<br> &lt; meta charset=”UTF-8”&gt;</code></pre></p>
 
       

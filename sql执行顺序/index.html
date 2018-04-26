@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="MyBlog">
 <meta property="og:description" content="SQL 不同于与其他编程语言的最明显特征是处理代码的顺序。在大数编程语言中，代码按编码顺序被处理，但是在SQL语言中，第一个被处理的子句是FROM子句，尽管SELECT语句第一个出现，但是几乎总是最后被处理。   每个步骤都会产生一个虚拟表，该虚拟表被用作下一个步骤的输入。这些虚拟表对调用者（客户端应用程序或者外部查询）不可用。只是最后一步生成的表才会返回 给调用者。如果没有在查询中指定某一子句，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-26T13:44:33.632Z">
+<meta property="og:updated_time" content="2018-04-26T15:05:01.445Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql执行顺序">
 <meta name="twitter:description" content="SQL 不同于与其他编程语言的最明显特征是处理代码的顺序。在大数编程语言中，代码按编码顺序被处理，但是在SQL语言中，第一个被处理的子句是FROM子句，尽管SELECT语句第一个出现，但是几乎总是最后被处理。   每个步骤都会产生一个虚拟表，该虚拟表被用作下一个步骤的输入。这些虚拟表对调用者（客户端应用程序或者外部查询）不可用。只是最后一步生成的表才会返回 给调用者。如果没有在查询中指定某一子句，">
@@ -343,7 +343,7 @@
 
       
         <p>SQL 不同于与其他编程语言的最明显特征是处理代码的顺序。在大数编程语言中，代码按编码顺序被处理，但是在SQL语言中，第一个被处理的子句是FROM子句，尽管SELECT语句第一个出现，但是几乎总是最后被处理。  </p>
-<p>每个步骤都会产生一个虚拟表，该虚拟表被用作下一个步骤的输入。这些虚拟表对调用者（客户端应用程序或者外部查询）不可用。只是最后一步生成的表才会返回 给调用者。如果没有在查询中指定某一子句，将跳过相应的步骤。下面是对应用于SQL server 2000和SQL Server 2005的各个逻辑步骤的简单描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(8)SELECT (9)DISTINCT  (11)&lt;Top Num&gt; &lt;select list&gt;</span><br><span class="line">(1)FROM [left_table]</span><br><span class="line">(3)&lt;join_type&gt; JOIN &lt;right_table&gt;</span><br><span class="line">(2)ON &lt;join_condition&gt;</span><br><span class="line">(4)WHERE &lt;where_condition&gt;</span><br><span class="line">(5)GROUP BY &lt;group_by_list&gt;</span><br><span class="line">(6)WITH &lt;CUBE | RollUP&gt;</span><br><span class="line">(7)HAVING &lt;having_condition&gt;</span><br><span class="line">(10)ORDER BY &lt;order_by_list&gt;</span><br></pre></td></tr></table></figure><br>逻辑查询处理阶段简介:</p>
+<p>每个步骤都会产生一个虚拟表，该虚拟表被用作下一个步骤的输入。这些虚拟表对调用者（客户端应用程序或者外部查询）不可用。只是最后一步生成的表才会返回 给调用者。如果没有在查询中指定某一子句，将跳过相应的步骤。下面是对应用于SQL server 2000和SQL Server 2005的各个逻辑步骤的简单描述。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(8)SELECT (9)DISTINCT  (11)&lt;Top Num&gt; &lt;select list&gt;</span><br><span class="line">(1)FROM [left_table]</span><br><span class="line">(3)&lt;join_type&gt; JOIN &lt;right_table&gt;</span><br><span class="line">(2)ON &lt;join_condition&gt;</span><br><span class="line">(4)WHERE &lt;where_condition&gt;</span><br><span class="line">(5)GROUP BY &lt;group_by_list&gt;</span><br><span class="line">(6)WITH &lt;CUBE | RollUP&gt;</span><br><span class="line">(7)HAVING &lt;having_condition&gt;</span><br><span class="line">(10)ORDER BY &lt;order_by_list&gt;</span><br></pre></td></tr></table></figure><br><a id="more"></a><br>逻辑查询处理阶段简介:</p>
 <ol>
 <li><strong>FROM：</strong>对FROM子句中的前两个表执行笛卡尔积（Cartesian product)(交叉联接），生成虚拟表VT1</li>
 <li><strong>ON：</strong>对VT1应用ON筛选器。只有那些使&lt;join_condition&gt;为真的行才被插入VT2。</li>
@@ -355,10 +355,14 @@
 <li><strong>SELECT:</strong>处理SELECT列表，产生VT8.</li>
 <li><strong>DISTINCT：</strong>将重复的行从VT8中移除，产生VT9.</li>
 <li><strong>ORDER BY：</strong>将VT9中的行按ORDER BY 子句中的列列表排序，生成游标（VC10).</li>
-<li><strong>TOP：</strong>从VC10的开始处选择指定数量或比例的行，生成表VT11,并返回调用者。<br>注：步骤10，按ORDER BY子句中的列列表排序上步返回的行，返回游标VC10.这一步是第一步也是唯一一步可以使用SELECT列表中的列别名的步骤。这一步不同于其它步骤的 是，它不返回有效的表，而是返回一个游标。SQL是基于集合理论的。集合不会预先对它的行排序，它只是成员的逻辑集合，成员的顺序无关紧要。对表进行排序 的查询可以返回一个对象，包含按特定物理顺序组织的行。ANSI把这种对象称为游标。理解这一步是正确理解SQL的基础。  </li>
+<li><p><strong>TOP：</strong>从VC10的开始处选择指定数量或比例的行，生成表VT11,并返回调用者。<br>注：步骤10，按ORDER BY子句中的列列表排序上步返回的行，返回游标VC10.这一步是第一步也是唯一一步可以使用SELECT列表中的列别名的步骤。这一步不同于其它步骤的 是，它不返回有效的表，而是返回一个游标。SQL是基于集合理论的。集合不会预先对它的行排序，它只是成员的逻辑集合，成员的顺序无关紧要。对表进行排序 的查询可以返回一个对象，包含按特定物理顺序组织的行。ANSI把这种对象称为游标。理解这一步是正确理解SQL的基础。<br>因为这一步不返回表（而是返回游标），使用了ORDER BY子句的查询不能用作表表达式。表表达式包括：视图、内联表值函数、子查询、派生表和共用表达式。它的结果必须返回给期望得到物理记录的客户端应用程序。例如，下面的派生表查询无效，并产生一个错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">select * </span><br><span class="line">from(select orderid,customerid from orders order by orderid) </span><br><span class="line">as d</span><br></pre></td></tr></table></figure>
+<p>下面的视图也会产生错误</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create view my_view</span><br><span class="line">as</span><br><span class="line">select *</span><br><span class="line">from orders</span><br><span class="line">order by orderid</span><br></pre></td></tr></table></figure>
+<p>在SQL中，表表达式中不允许使用带有ORDER BY子句的查询，而在T—SQL中却有一个例外（应用TOP选项）。  </p>
+<p>所以要记住，不要为表中的行假设任何特定的顺序。换句话说，除非你确定要有序行，否则不要指定ORDER BY 子句。排序是需要成本的，SQL Server需要执行有序索引扫描或使用排序运行符。  </p>
+</li>
 </ol>
-<p>因为这一步不返回表（而是返回游标），使用了ORDER BY子句的查询不能用作表表达式。表表达式包括：视图、内联表值函数、子查询、派生表和共用表达式。它的结果必须返回给期望得到物理记录的客户端应用程序。例如，下面的派生表查询无效，并产生一个错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> </span><br><span class="line">select * </span><br><span class="line">from(select orderid,customerid from orders order by orderid) </span><br><span class="line">as d</span><br></pre></td></tr></table></figure><br>下面的视图也会产生错误<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create view my_view</span><br><span class="line">as</span><br><span class="line">select *</span><br><span class="line">from orders</span><br><span class="line">order by orderid</span><br></pre></td></tr></table></figure><br>在SQL中，表表达式中不允许使用带有ORDER BY子句的查询，而在T—SQL中却有一个例外（应用TOP选项）。  </p>
-<p> 所以要记住，不要为表中的行假设任何特定的顺序。换句话说，除非你确定要有序行，否则不要指定ORDER BY 子句。排序是需要成本的，SQL Server需要执行有序索引扫描或使用排序运行符。  </p>
 
       
     </div>
